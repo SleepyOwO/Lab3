@@ -7,6 +7,9 @@ public class RiverViewer {
     private List<River> _RiverList;
     private final int MAXLEN;
 
+    /**
+     * Конструктор по умолчанию класса RiverViewer
+     */
     public RiverViewer(){
         _RiverList = new LinkedList<>();
         MAXLEN = 99999999;
