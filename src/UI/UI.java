@@ -34,7 +34,6 @@ public class UI {
         while (true){
             switch (_in.nextInt()){
                 case 1:
-                    String params;
                     System.out.println("""
                         Выберите реку:\
                         
