@@ -5,9 +5,11 @@ import java.util.*;
 public class RiverViewer {
 
     private List<River> _RiverList;
+    private final int MAXLEN;
 
     public RiverViewer(){
         _RiverList = new LinkedList<>();
+        MAXLEN = 99999999;
     }
 
     public void add_river(int witcher, String params){
@@ -27,6 +29,38 @@ public class RiverViewer {
                 _RiverList.add(new PlainRiver(name, location, width, length, depth, swim, fish));
                 break;
         }
+    }
+
+    public String shortest_river(){
+        int length = MAXLEN;
+        String name = " ";
+        for (var river : _RiverList){
+            if(river.get_length() < length){
+                length = river.get_length();
+                name = river.get_name();
+            }
+        }
+        return name;
+    }
+
+    public String middle_info(){
+        int middle = 0;
+        for (var river : _RiverList){
+            middle += river.get_length();
+        }
+        middle /= _RiverList.size();
+
+        String infos = "";
+        for (var river : _RiverList){
+            if (river.get_length() > middle)
+                infos += river.get_info() + '\n';
+        }
+
+        return infos;
+    }
+
+    public void sortByName(){
+        //_RiverList.sort();
     }
 
 }
