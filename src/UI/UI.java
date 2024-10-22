@@ -63,10 +63,10 @@ public class UI {
                     }
                     break;
                 case 2:
-
+                    System.out.println(viewer.shortest_river());
                     break;
                 case 3:
-
+                    System.out.println(viewer.middle_info());
                     break;
                 case 4:
 
