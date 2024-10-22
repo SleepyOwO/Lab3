@@ -31,8 +31,16 @@ public class PlainRiver extends River {
     }
 
     @Override
-    public String get_info() {
-        String info = super.get_info() + "\nМожно плавать: " + _swimable + "\nМожно рыбачить: " + _fishing;
+    public String getInfo() {
+        String info = super.getInfo() + "\nМожно плавать: " + _swimable + "\nМожно рыбачить: " + _fishing;
         return info;
+    }
+
+    public void setSwimable(boolean swimable){
+        _swimable = swimable;
+    }
+
+    public void setFishing(boolean fishing) {
+        _fishing = fishing;
     }
 }
