@@ -14,7 +14,6 @@ public class UI {
     }
 
     public void Run(){
-        boolean flag = true;
         RiverViewer viewer = new RiverViewer();
         System.out.println("""
                 Выберите действие:\
@@ -31,28 +30,30 @@ public class UI {
                 
                 6) Выход"""
         );
-        while (true){
-            switch (_in.nextInt()){
+        do {
+            switch (_in.nextInt()) {
                 case 1:
                     System.out.println("""
-                        Выберите реку:\
-                        
-                        1) Горная река\
-                        
-                        2) Равнинная река""");
+                            \
+                            Выберите реку:\
+                            
+                            1) Горная река\
+                            
+                            2) Равнинная река""");
                     switch (_in.nextInt()) {
                         case 1:
                             System.out.println("""
-                                Введите параметры"\
-                                (name location width length depth speed height)""");
+                                    \
+                                    Введите параметры"\
+                                    (name location width length depth speed height)""");
                             _in.skip("\r\n|[\n\r\u2028\u2029\u0085]");
                             params = _in.nextLine();
                             viewer.add_river(1, params);
                             break;
                         case 2:
                             System.out.println("""
-                                Введите параметры\
-                                (name location width length depth swimable(bool) fishing(bool))""");
+                                    Введите параметры\
+                                    (name location width length depth swimable(bool) fishing(bool))""");
                             _in.skip("\r\n|[\n\r\u2028\u2029\u0085]");
                             params = _in.nextLine();
                             viewer.add_river(2, params);
@@ -69,10 +70,25 @@ public class UI {
                     System.out.println(viewer.middle_info());
                     break;
                 case 4:
-
+                    viewer.sortByName();
                     break;
                 case 5:
-
+                    System.out.println("\nВведите имя редактируемой реки:");
+                    String name = _in.nextLine();
+                    System.out.println("""
+                            Выберите редактируемый параметр:\
+                            1) name\
+                            2) location\
+                            3) width\
+                            4) length\
+                            5) depth\
+                            6) speed or swimable\
+                            7) height or fishing
+                            """);
+                    int switcher = _in.nextInt();
+                    System.out.println("Введите новое значение параметра:");
+                    String param = _in.nextLine();
+                    System.out.println(viewer.changeField(switcher, name, param));
                     break;
                 case 6:
                     System.exit(0);
@@ -80,6 +96,6 @@ public class UI {
                     System.out.println("Некорректное значение");
                     break;
             }
-        }
+        } while (true);
     }
 }

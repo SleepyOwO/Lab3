@@ -35,8 +35,16 @@ public class MountainRiver extends River{
      * @return String info - строка с информацие о реке
      */
     @Override
-    public String get_info() {
-        String info = super.get_info() + "\nСкорость течения: " + _speed + " м/с\nВысота истока: " + _height + " км";
+    public String getInfo() {
+        String info = super.getInfo() + "\nСкорость течения: " + _speed + " м/с\nВысота истока: " + _height + " км";
         return info;
+    }
+
+    public void setSpeed(int speed) {
+        _speed = speed;
+    }
+
+    public void setHeight(int height) {
+        _height = height;
     }
 }

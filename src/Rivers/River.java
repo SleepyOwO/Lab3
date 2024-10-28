@@ -1,7 +1,5 @@
 package Rivers;
 
-import java.util.List;
-
 public class River {
 
     private String _name;
@@ -42,7 +40,7 @@ public class River {
      * Метод возвращающий строку - название реки
      * @return String _name - Название реки
      */
-    public String get_name() {
+    public String getName() {
         return _name;
     }
 
@@ -50,7 +48,7 @@ public class River {
      * Метод возвращающий число - длину реки
      * @return int _length - длина реки
      */
-    public int get_length() {
+    public int getLength() {
         return _length;
     }
 
@@ -58,7 +56,7 @@ public class River {
      * Метод возвращающий строку, содержащую полную информацию о реке
      * @return String info - строка с информацие о реке
      */
-    public String get_info() {
+    public String getInfo() {
         String info = "Информация о реке " + _name +":\n" + "Расположение: " + _location + "\nДлина: "
                 + _length + " км\nШирина: " + _width + " м\nГлубина: " + _depth + " м";
         return info;
@@ -68,7 +66,7 @@ public class River {
      * Устанавливает новое название реки
      * @param name новое название реки
      */
-    public void set_name(String name) {
+    public void setName(String name) {
         _name = name;
     }
 
@@ -76,7 +74,7 @@ public class River {
      * Устанавливает новое расположение реки
      * @param location новое расположение реки
      */
-    public void set_location(String location) {
+    public void setLocation(String location) {
         _location = location;
     }
 
@@ -84,7 +82,7 @@ public class River {
      * Устанавливает новую длину реки (км)
      * @param length новая длина реки
      */
-    public void set_length(int length) {
+    public void setLength(int length) {
         _length = length;
     }
 
@@ -92,7 +90,7 @@ public class River {
      * Устанавливает новую ширину реки (м)
      * @param width новая ширина реки
      */
-    public void set_width(int width) {
+    public void setWidth(int width) {
         _width = width;
     }
 
@@ -100,7 +98,7 @@ public class River {
      * Устанавливает новую глубину реки (м)
      * @param depth новая глубина реки
      */
-    public void set_depth(int depth) {
+    public void setDepth(int depth) {
         _depth = depth;
     }
 }
