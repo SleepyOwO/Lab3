@@ -77,12 +77,12 @@ public class UI {
                     String name = _in.nextLine();
                     System.out.println("""
                             Выберите редактируемый параметр:\
-                            1) name\
-                            2) location\
-                            3) width\
-                            4) length\
-                            5) depth\
-                            6) speed or swimable\
+                            1) name \
+                            2) location \
+                            3) width \
+                            4) length \
+                            5) depth \
+                            6) speed or swimable \
                             7) height or fishing
                             """);
                     int switcher = _in.nextInt();
