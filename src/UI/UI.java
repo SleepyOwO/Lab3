@@ -44,16 +44,16 @@ public class UI {
                         case 1:
                             System.out.println("""
                                     \
-                                    Введите параметры"\
-                                    (name location width length depth speed height)""");
+                                    Введите параметры \
+                                    (Название Расположение Ширина Длина Глубина Скорость Высота)""");
                             _in.skip("\r\n|[\n\r\u2028\u2029\u0085]");
                             params = _in.nextLine();
                             viewer.add_river(1, params);
                             break;
                         case 2:
                             System.out.println("""
-                                    Введите параметры\
-                                    (name location width length depth swimable(bool) fishing(bool))""");
+                                    Введите параметры \
+                                    (Название Расположение Ширина Длина Глубина Возможность плавать(bool) Возможность рыбачить(bool))""");
                             _in.skip("\r\n|[\n\r\u2028\u2029\u0085]");
                             params = _in.nextLine();
                             viewer.add_river(2, params);
@@ -64,7 +64,7 @@ public class UI {
                     }
                     break;
                 case 2:
-                    System.out.println(viewer.shortest_river());
+                    System.out.println("Самая коротка река: " + viewer.shortest_river());
                     break;
                 case 3:
                     System.out.println(viewer.middle_info());
@@ -73,19 +73,21 @@ public class UI {
                     viewer.sortByName();
                     break;
                 case 5:
+                    _in.nextLine();
                     System.out.println("\nВведите имя редактируемой реки:");
                     String name = _in.nextLine();
                     System.out.println("""
-                            Выберите редактируемый параметр:\
-                            1) name \
-                            2) location \
-                            3) width \
-                            4) length \
-                            5) depth \
-                            6) speed or swimable \
-                            7) height or fishing
+                            Выберите редактируемый параметр: \
+                            1) Название \
+                            2) Расположение \
+                            3) Ширина \
+                            4) Длина \
+                            5) Глубина \
+                            6) Скорость или Возможность плавать \
+                            7) Высота или Возможность Рыбачить
                             """);
                     int switcher = _in.nextInt();
+                    _in.nextLine();
                     System.out.println("Введите новое значение параметра:");
                     String param = _in.nextLine();
                     System.out.println(viewer.changeField(switcher, name, param));
