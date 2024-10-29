@@ -36,7 +36,6 @@ public class RiverViewer {
 
         switch (witcher){
             case 1:
-                // Проверка скорости и высоты (должны быть числа)
                 if (!isNumeric(params_arr[5]) || !isNumeric(params_arr[6]))
                     throw new RuntimeException("Скорость и высота должны быть положительными числами");
 
@@ -45,7 +44,6 @@ public class RiverViewer {
                 _RiverList.add(new MountainRiver(name, location, width, length, depth, speed, height));
                 break;
             case 2:
-                // Проверка для параметров с типом boolean (должны быть "true" или "false")
                 if (!isBoolean(params_arr[5]) || !isBoolean(params_arr[6]))
                     throw new RuntimeException("Параметры плавания и рыбалки должны быть true или false");
 
