@@ -69,4 +69,5 @@ public class PlainRiver extends River {
     public void setFishing(boolean fishing) {
         _fishing = fishing;
     }
+
 }

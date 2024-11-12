@@ -29,4 +29,5 @@ public class Comparator {
         if (str == null || str.trim().isEmpty()) return false;
         return !isNumeric(str) && !isBoolean(str);
     }
+
 }
