@@ -31,19 +31,42 @@ public class MountainRiver extends River{
     }
 
     /**
+     * Конструктор с параметрами, принимающий на вход массив строк, содержащих параметры
+     * @param params массив строк, содержащих параметры
+     */
+    public MountainRiver(String[] params){
+        super(params);
+        if (Integer.parseInt(params[5]) >= 0 && Integer.parseInt(params[6]) >= 0){
+            _speed = Integer.parseInt(params[5]);
+            _height = Integer.parseInt(params[6]);
+        } else {
+            _RiverList.remove(this);
+            throw new RuntimeException("Некорректные числовые параметры");
+        }
+    }
+
+    /**
      * Метод возвращающий строку, содержащую полную информацию о реке
      * @return String info - строка с информацие о реке
      */
     @Override
     public String getInfo() {
-        String info = super.getInfo() + "\nСкорость течения: " + _speed + " м/с\nВысота истока: " + _height + " км";
+        String info = super.getInfo() + "\nСкорость течения: " + _speed + " м/с\nВысота истока: " + _height + " км\n";
         return info;
     }
 
+    /**
+     * Метод, устанавливающий новое значение поля _speed (скорость течения)
+     * @param speed новое значение поля _speed
+     */
     public void setSpeed(int speed) {
         _speed = speed;
     }
 
+    /**
+     * Метод, устанавливающий новое значение поля _height (высота истока)
+     * @param height новое значение поля _height
+     */
     public void setHeight(int height) {
         _height = height;
     }
